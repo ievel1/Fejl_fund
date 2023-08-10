@@ -49,8 +49,9 @@ namespace Rap_Finands
 
                 Console.Write(">");
                 string valg1 = Console.ReadLine();
-                int valg = int.Parse(valg1+1);
-                
+                if (int.TryParse(valg1, out int valg))
+                //Der var sat et +1 på valg1 dvs. at uanset hvilke tal jeg vælger vil det blive adderet med 1 
+                // Opdatering 2: Jeg har anvendt en TryParse i stedet for blot at parse, da programmet før ville afslutte, hvis der blev indtastet et tegn, der ikke var godkendt, i stedet for en hel talværdi.
                 switch (valg) {
                     case 1:
                         dos_opretKonto();
